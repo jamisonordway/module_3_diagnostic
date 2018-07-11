@@ -9,7 +9,7 @@ class StationSearchResult
     faraday.headers["X-API-KEY"] = ENV['altfuel_key']
     faraday.adapter Faraday.default_adapter
     end 
-    response = conn.get '/altfuel/v1/stations/zip?=80203' 
+    response = conn.get '/altfuel/v1/stations/zip?=80203'
     data = JSON.parse(response.body, symbolize_names: true)
     data[:results].map do |fuel_station_data|
         Station.new(fuel_station_data)
