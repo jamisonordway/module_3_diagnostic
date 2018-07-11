@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
-  def index
-   
+    
+  def
     @search = StationSearchResult.new(params[:q])
   end
 end
